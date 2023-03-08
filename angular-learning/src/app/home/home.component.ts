@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  servername: any
+  public show: boolean = false;
+  public buttonName: any = 'Show';
+  ngModelText: any
   public fromName!: FormGroup;
   constructor(private fb: FormBuilder, private router: Router) {
     {
@@ -20,5 +22,14 @@ export class HomeComponent {
 
   getServerName() {
     // this.servername
+  }
+
+  toggle() {
+    this.show = !this.show;
+    if (this.show) {
+      this.buttonName = 'Hide'
+    } else {
+      this.buttonName = 'Show'
+    }
   }
 }

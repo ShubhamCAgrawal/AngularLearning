@@ -1,13 +1,22 @@
 <app-details-page></app-details-page>
 <div class="center" [formGroup]="fromName">
     <div class="container" class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Two way data binding</label>
-        <input [(ngModel)]="servername" type="text" class="form-control" formControlName="serverName"
+        <label for="exampleFormControlInput1" class="form-label">Two way data binding: </label>
+        <input [(ngModel)]="ngModelText" type="text" class="form-control" formControlName="serverName"
             id="exampleFormControlInput1" value="shubham">
         <p *ngIf="(fromName.dirty || fromName.touched) && fromName.errors">Please enter name</p>
         <!-- <div class="d-grid gap-2">
             <button (click)="getServerName()" class="btn btn-primary" type="button">Button</button>
         </div> -->
-        <h5>Your name will appear here : {{servername}}</h5>
+        <h5 class="ng-model-text">Your name will appear here : {{ngModelText}}</h5>
+    </div>
+</div>
+<div class="center border">
+    <div class="container" class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Hide and show toggle Section : </label>
+        <div class="d-grid gap-2">
+            <button (click)="toggle()" class="btn btn-primary" type="button">{{buttonName}}</button>
+        </div>
+        <h4 *ngIf="show">Hello Angular</h4>
     </div>
 </div>
